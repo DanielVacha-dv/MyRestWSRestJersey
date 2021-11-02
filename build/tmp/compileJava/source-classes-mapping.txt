@@ -1,0 +1,4 @@
+main/wsapp/MyApplication.java
+ main.wsapp.MyApplication
+main/wsapp/controllers/Root.java
+ main.wsapp.controllers.Root
