@@ -10,27 +10,44 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.net.URI;
 
 @Path("/bookService")
 public class BookService {
-
+//http://localhost:8080/MyRestWSRestJersey/index.html
     //http://localhost:8080/MyRestWSRestJersey/bookService/addBook?bookName=Elik&bookPages=563 o
-//    @POST
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/addBook")
-//    public Response insertBook(@FormParam("bookName") final String bookName, @FormParam("bookPages") final int pages) {
-////    public Response insertBook(@FormDataParam("") Book book) {
-//        Library dbFake = MyDBFake.getDbFake();
-//        Book n = new Book();
-//        n.setId(dbFake.getNewId());
-//        n.setBookPages(pages);
-////        n.setBookPages(book.getBookPages());
-//        n.setBookName(bookName);
-////        n.setBookName(book.getBookName());
-//        dbFake.getContent().add(n);
-//        return Response.status(200).build();
-//    }
+    @POST
+    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
+    @Path("/addBook")
+    public Response insertBook(@FormParam("bookName") final String bookName, @FormParam("bookPages") final int pages) {
+//    public Response insertBook(@FormDataParam("") Book book) {
+        Library dbFake = MyDBFake.getDbFake();
+        Book n = new Book();
+        n.setId(dbFake.getNewId());
+        n.setBookPages(pages);
+//        n.setBookPages(book.getBookPages());
+        n.setBookName(bookName);
+//        n.setBookName(book.getBookName());
+        dbFake.getContent().add(n);
+        Response.ResponseBuilder responseBuilder = Response.temporaryRedirect(URI.create("index.html"));
+        return   responseBuilder.build();
+    }
+    //http://localhost:8080/MyRestWSRestJersey/api/bookService/addBook?bookName=Elik&bookPages=563
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
+    @Path("/addBook")
+    public Response insertBook2(@QueryParam("bookName") final String bookName, @QueryParam("bookPages") final int pages) {
+//    public Response insertBook(@FormDataParam("") Book book) {
+        Library dbFake = MyDBFake.getDbFake();
+        Book n = new Book();
+        n.setId(dbFake.getNewId());
+        n.setBookPages(pages);
+//        n.setBookPages(book.getBookPages());
+        n.setBookName(bookName);
+//        n.setBookName(book.getBookName());
+        dbFake.getContent().add(n);
+        return Response.status(200).build();
+    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
