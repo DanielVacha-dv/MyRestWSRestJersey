@@ -1,4 +1,14 @@
+main/wsapp/models/Library.java
+ main.wsapp.models.Library
 main/wsapp/MyApplication.java
  main.wsapp.MyApplication
+main/wsapp/models/User.java
+ main.wsapp.models.User
+main/wsapp/models/Book.java
+ main.wsapp.models.Book
+main/wsapp/db/MyDBFake.java
+ main.wsapp.db.MyDBFake
 main/wsapp/controllers/Root.java
  main.wsapp.controllers.Root
+main/wsapp/controllers/BookService.java
+ main.wsapp.controllers.BookService

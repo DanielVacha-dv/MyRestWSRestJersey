@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 /**
  * Root resource, which represents “Hello world!”.
  */
-@Path("/")
+@Path("/helloworld")
 public class Root {
 
     @GET
