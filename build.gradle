@@ -1,20 +1,24 @@
 buildscript {
     repositories {
+        jcenter()
         gradlePluginPortal()
     }
     dependencies {
         classpath 'com.bmuschko:gradle-tomcat-plugin:2.7.0'
+        classpath 'com.eriwen:gradle-js-plugin:1.9.0'
     }
 }
 
 plugins {
     id 'java'
+    id 'war'
 }
 
-apply plugin: 'war'
 apply plugin: 'com.bmuschko.tomcat'
 apply plugin: 'com.bmuschko.tomcat-base'
 
+//ltye definovat rucne
+webAppDirName = '/src/main/webapp/'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -55,6 +59,5 @@ tomcat {
 test {
     useJUnitPlatform()
 }
-
 
 

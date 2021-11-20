@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="application/javascript" src="js/jquery_3_6/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div>
@@ -14,5 +15,28 @@
         <input type="submit">
     </form>
 </div>
+<div>
+    <h3>Books</h3>
+    <table id="bookOverview">
+        <thead>
+        <tr>
+            <th>pages</th>
+            <th>book name</th>
+        </tr>
+        </thead>
+        <tbody id="bookOverviewTBody">
+            <tr>
+                <td>
+                    <button onclick="deleteRecord(this)">smaz</button>
+                </td>
+                <td>
+                    <button onclick="editRecord(this)">ulož</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
+<script type="application/javascript" src="js/bookSupport.js"></script>
+<script type="application/javascript" src="js/a.js"></script>
 </html>

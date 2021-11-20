@@ -15,6 +15,7 @@ import java.net.URI;
 @Path("/bookService")
 public class BookService {
 //http://localhost:8080/MyRestWSRestJersey/index.html
+//    http://localhost:8080/MyRestWSRestJersey/api/bookService/getAllBook
     //http://localhost:8080/MyRestWSRestJersey/bookService/addBook?bookName=Elik&bookPages=563 o
     @POST
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
